@@ -1,0 +1,11 @@
+{
+  "name": "quiz-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "repository": "",
+  "author": "Sandor Zelei",
+  "dependencies": {
+    "express": "~3.2.4"
+  }
+}
