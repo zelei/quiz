@@ -3,13 +3,15 @@ var passport = require('passport');
 var ect = require('ect');
 var app = express();
 
-var Web = function() {
+var Web = function(context) {
 
-    this.init = function(root) {
+    this.context = context;
+
+    this.init = function() {
         app.configure(function() {
-          app.engine('.ect', ect({ watch: true, root: root }).render);
+          app.engine('.ect', ect({ watch: true, root: context }).render);
           
-          app.set('views', root + '/views');
+          app.set('views', context + '/views');
           app.set('view engine', '.ect');
           
           app.use(express.logger());
@@ -20,7 +22,7 @@ var Web = function() {
           app.use(passport.initialize());
           app.use(passport.session());
           app.use(app.router);
-          app.use(express.static(root + '/public'));
+          app.use(express.static(context + '/public'));
         });
         
         return app;

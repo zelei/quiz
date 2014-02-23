@@ -1,3 +1,11 @@
+.pull-center {
+    text-align: center;    
+}
+
+.footer {
+    margin-top: 50px;
+}
+
 .top5 { margin-top: 5px; }
 
 @media (max-width: 991px) {
